@@ -16,7 +16,8 @@ Lumi is a containerized management platform designed to simplify Telegram bot de
 
 - **LumiCore** 🎛️ - Backend server & Bot Metrics Hub
 - **Lumi** 🎨 - React-based Web UI  
-- **LumiCodeInjector** ⚡ - Bot instrumentation generator
+- **LumiForge** ⚡ - Bot instrumentation generator
+- **LumiBeacon** 💾 - Real-time Telemetry Aggregation System
 
 ## ✨ Proposed Features
 
