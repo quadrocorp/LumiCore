@@ -19,20 +19,20 @@ Lumi is a containerized management platform designed to simplify Telegram bot de
 - **LumiForge** ⚡ - Bot instrumentation generator
 - **LumiBeacon** 💾 - Real-time Telemetry Aggregation System
 
-## ✨ Proposed Features
+## ✨ Roadmap
 
-### 🚀 Alpha (1.0) Target
+### 🕯️ v1.0-alpha, codename: **Photon**
 - ⚡ Start/stop bot containers
 - 📦 Add/remove bot containers  
 - 📊 Real-time CPU/RAM monitoring
-- 🔍 Basic tracking system
+- 🔑 Fully working and protected authentication
 
-### 📈 Future Enhancements
-- 🔄 Real-time log streaming
-- 📨 Usage analytics
-- ⚡ Smart and effective power management
-- 🔔 Alerting system
-- ⚙️ Dynamic configuration
+### 💡 v2.0-beta, codename: **Quantum**
+- Integration of **LumiForge**, allowing the generation of trackers for use with Telegram bots
+- Basic trackers such as: **throughput** (messages per minute/hour/day/month)
+
+### 🔦 v3.0, codename: **Aurora**
+- Live-log
 
 ---
 
