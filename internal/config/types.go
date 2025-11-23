@@ -1,12 +1,10 @@
 package config
 
-// Owned by quadrocorp.
-// This file defines configuration types in LumiCore package.
-// LumiCore is the core of Lumi, the Telegram Bot manager and Docker Orchestration tool
-// with statistics features.
-
-// File updated to the version: Photon
+// Author == quadrocorp
+// Version == v1.0-alpha || Photon
 // NOTE: Photon is the alpha version of this project, and implies an MVP.
+
+// This file defines configuration types in LumiCore package.
 
 // AppConfig represents the main application configuration
 type AppConfig struct {

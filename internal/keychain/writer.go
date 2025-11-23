@@ -33,12 +33,12 @@ func GenerateJWTSecret(length int) (string, error) {
 	return hex.EncodeToString(bytes), nil
 }
 
-func WriteToFile(key *string, t SecretType) error {
+func WriteToFile(key string, t SecretType) error {
 	if t == JWTAccess || t == JWTRefresh {
 		return errors.New("JWT keys of type access or refresh cannot be saved")
 	}
-	strings.TrimSpace(*key)
-	if *key == "" {
+	key = strings.TrimSpace(key)
+	if key == "" {
 		return errors.New("the key string is empty, nothing to write")
 	}
 	path, err := genPathName(t)
@@ -46,17 +46,19 @@ func WriteToFile(key *string, t SecretType) error {
 		return err
 	}
 
-	file, err := os.Create(path)
+	dir := filepath.Dir(path)
+	if err := os.MkdirAll(dir, 0700); err != nil {
+		return fmt.Errorf("failed to create secret directory %q: %w", dir, err)
+	}
+
+	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to open secret file %q: %w", path, err)
 	}
 	defer file.Close()
 
-	if _, err := file.Write([]byte(*key)); err != nil {
-		return err
-	}
-
-	return nil
+	_, err = file.Write([]byte(key))
+	return err
 }
 
 func genPathName(t SecretType) (string, error) {

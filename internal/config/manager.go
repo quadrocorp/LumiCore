@@ -1,5 +1,13 @@
 package config
 
+// Author == quadrocorp
+// Version == v1.0-alpha || Photon
+// NOTE: Photon is the alpha version of this project, and implies an MVP.
+
+// This file implements a configuration manager, a system which would control
+// the configuration files of Lumi. Creation, validation, existence check, loading
+// and saving the file.
+
 import (
 	"encoding/json"
 	"fmt"

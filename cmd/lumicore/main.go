@@ -1,5 +1,12 @@
 package main
 
+// Author == quadrocorp
+// Version == v1.0-alpha || Photon
+// NOTE: Photon is the alpha version of this project, and implies an MVP.
+
+// LumiCore is the center, the core of Lumi, the innovative and feature-rich
+// Telegram Bot management platform
+
 import (
 	"LumiCore/internal/keychain"
 	"fmt"
@@ -31,7 +38,7 @@ func main() {
 		os.Exit(0)
 	}
 
-	if err := keychain.WriteToFile(&key, keychain.JWTRefresh); err != nil {
+	if err := keychain.WriteToFile(key, keychain.JWTMaster); err != nil {
 		fmt.Printf("an error occurred: %s", err)
 	}
 }
